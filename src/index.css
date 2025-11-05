@@ -1,35 +1,247 @@
+/* 
+ * Importamos las capas base de Tailwind CSS
+ * - base: reset de CSS y estilos base
+ * - components: clases de componentes reutilizables
+ * - utilities: clases utilitarias de una sola propiedad
+ */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* 
+ * Capa base: estilos fundamentales aplicados a elementos HTML
+ * Estos estilos se aplican antes que las clases utilitarias
+ */
 @layer base {
+  /* Scroll suave para toda la página (mejora UX en navegación) */
   * {
     @apply scroll-smooth;
   }
 
+  /* 
+   * Estilos base del body
+   * - font-mono: fuente monoespaciada para efecto técnico
+   * - antialiased: suavizado de fuentes para mejor legibilidad
+   * - Space Mono: fuente específica de Google Fonts
+   */
   body {
     @apply font-mono antialiased;
     font-family: 'Space Mono', monospace;
   }
 
+  /* Personalización del color de selección de texto */
   ::selection {
     @apply bg-black text-white;
   }
 }
 
+/* 
+ * Capa utilities: clases personalizadas que actúan como utilidades
+ * Estas clases tienen prioridad sobre las utilidades base de Tailwind
+ */
 @layer utilities {
+  /* 
+   * Animación de aparición (fade in)
+   * Usada en componentes que necesitan aparecer suavemente
+   */
   .animate-fade-in {
     animation: fadeIn 0.6s ease-in-out;
   }
 
+  /* 
+   * Animación de desaparición (fade out)
+   * 'forwards' mantiene el estado final de la animación
+   */
+  .animate-fade-out {
+    animation: fadeOut 0.8s ease-in-out forwards;
+  }
+
+  /* 
+   * Keyframes para fade in
+   * Combina opacidad y movimiento vertical para efecto suave
+   */
   @keyframes fadeIn {
     from {
       opacity: 0;
-      transform: translateY(20px);
+      transform: translateY(20px); /* Inicia 20px más abajo */
     }
     to {
       opacity: 1;
-      transform: translateY(0);
+      transform: translateY(0); /* Termina en posición original */
+    }
+  }
+
+  /* 
+   * Keyframes para fade out
+   * Combina opacidad y escala para efecto de desvanecimiento
+   */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      transform: scale(1); /* Tamaño original */
+    }
+    to {
+      opacity: 0;
+      transform: scale(0.95); /* Ligeramente más pequeño */
+    }
+  }
+
+  /* 
+   * ANIMACIONES DE SUBRAYADO TIPO CÓDIGO
+   * Estas clases crean un efecto visual que simula código siendo subrayado
+   * Se aplican al nombre principal en el componente Hero
+   */
+  
+  /* 
+   * Clase base para subrayado animado
+   * position: relative permite que el pseudo-elemento ::after se posicione absolutamente
+   */
+  .code-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  /* 
+   * Pseudo-elemento que crea la línea de subrayado
+   * - content: '': elemento vacío necesario para mostrar el pseudo-elemento
+   * - position: absolute: se posiciona relativo al elemento padre
+   * - background: currentColor: usa el color del texto padre (adapta al tema)
+   * - animation: se ejecuta infinitamente cada 4 segundos
+   */
+  .code-underline::after {
+    content: '';
+    position: absolute;
+    bottom: -4px; /* 4px debajo del texto */
+    left: 0;
+    width: 0; /* Inicia sin ancho, crece con la animación */
+    height: 3px; /* Grosor de la línea */
+    background: currentColor; /* Hereda color del texto (adapta al tema) */
+    opacity: 0.8; /* Ligeramente transparente */
+    animation: codeUnderline 4s ease-in-out infinite;
+    border-radius: 1px; /* Bordes suavizados */
+  }
+
+  /* 
+   * Versión con retraso para el apellido
+   * Idéntica a la anterior pero con animation-delay
+   */
+  .code-underline-delayed {
+    position: relative;
+    display: inline-block;
+  }
+
+  .code-underline-delayed::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: currentColor;
+    opacity: 0.8;
+    animation: codeUnderline 4s ease-in-out infinite;
+    animation-delay: 2s;
+    border-radius: 1px;
+  }
+
+  @keyframes codeUnderline {
+    0% {
+      width: 0;
+      opacity: 0;
+    }
+    5% {
+      opacity: 0.8;
+    }
+    25% {
+      width: 100%;
+      opacity: 0.8;
+    }
+    75% {
+      width: 100%;
+      opacity: 0.8;
+    }
+    95% {
+      opacity: 0.8;
+    }
+    100% {
+      width: 0;
+      opacity: 0;
+    }
+  }
+
+  /* Efecto de resaltado adicional */
+  .code-highlight {
+    position: relative;
+  }
+
+  .code-highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -4px;
+    right: -4px;
+    bottom: 0;
+    background: rgba(59, 130, 246, 0.1);
+    opacity: 0;
+    animation: codeHighlight 4s ease-in-out infinite;
+    border-radius: 4px;
+    z-index: -1;
+  }
+
+  @keyframes codeHighlight {
+    0%, 20% {
+      opacity: 0;
+    }
+    25%, 75% {
+      opacity: 1;
+    }
+    80%, 100% {
+      opacity: 0;
+    }
+  }
+
+  /* Animación de cursor parpadeante */
+  .blinking-cursor::after {
+    content: '|';
+    display: inline-block;
+    animation: blink 1.2s infinite;
+    margin-left: 6px;
+    font-weight: 300;
+    opacity: 0.8;
+  }
+
+  @keyframes blink {
+    0%, 45% {
+      opacity: 1;
+    }
+    46%, 100% {
+      opacity: 0;
+    }
+  }
+
+  /* Efecto de escritura de código en tiempo real */
+  .typing-effect {
+    overflow: hidden;
+    border-right: 3px solid;
+    white-space: nowrap;
+    animation: typing 3.5s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from, to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: currentColor;
     }
   }
 }

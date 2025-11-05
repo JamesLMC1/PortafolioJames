@@ -1,17 +1,34 @@
+// Importamos React hooks para manejar estado y efectos
 import { useState, useEffect } from 'react';
+// Importamos íconos de Lucide React para el menú móvil y toggle de tema
 import { Menu, X, Moon, Sun } from 'lucide-react';
+// Importamos el hook personalizado para manejar el tema oscuro/claro
 import { useTheme } from '../contexts/ThemeContext';
 
+/**
+ * Componente Navigation - Barra de navegación fija responsiva
+ * Incluye:
+ * - Navegación adaptativa que cambia con el scroll
+ * - Menú hamburguesa para dispositivos móviles
+ * - Toggle para cambiar entre tema claro y oscuro
+ * - Navegación suave entre secciones usando scroll
+ */
 export default function Navigation() {
+  // Estado para detectar si el usuario ha hecho scroll (cambia el estilo de la barra)
   const [isScrolled, setIsScrolled] = useState(false);
+  // Estado para controlar si el menú móvil está abierto
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // Obtenemos el tema actual y la función para cambiarlo del contexto
   const { theme, toggleTheme } = useTheme();
 
+  // Effect para detectar el scroll y cambiar el estilo de la navegación
   useEffect(() => {
     const handleScroll = () => {
+      // Si el scroll es mayor a 50px, activamos el estilo "scrolled"
       setIsScrolled(window.scrollY > 50);
     };
 
+    // Agregamos el event listener para el scroll
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -63,19 +80,19 @@ export default function Navigation() {
               onClick={() => scrollToSection('projects')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              PROJECTS
+              PROYECTOS
             </button>
             <button
               onClick={() => scrollToSection('skills')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              STACK
+              HABILIDADES
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              CONTACT
+              CONTACTO
             </button>
             <button
               onClick={toggleTheme}

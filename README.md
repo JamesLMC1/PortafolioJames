@@ -4,21 +4,39 @@ Un portfolio moderno y responsivo construido con React, TypeScript, Vite y Tailw
 
 ## ✨ Características
 
-- 🎨 Diseño moderno y responsivo
-- ⚡ Desarrollado con Vite para un desarrollo ultra-rápido
-- 🔷 TypeScript para mayor seguridad de tipos
-- 🎨 Tailwind CSS para estilos utilitarios
-- 📱 Totalmente responsivo
-- 🎯 Optimizado para rendimiento
+- 🎨 **Diseño moderno y minimalista** con estética técnica
+- 🌓 **Modo oscuro/claro** con persistencia y detección automática
+- ⚡ **Animaciones CSS personalizadas** (subrayado tipo código, cursor parpadeante)
+- 🔷 **TypeScript** para mayor seguridad de tipos y mejor DX
+- 📱 **Totalmente responsivo** (móvil, tablet, desktop)
+- 🎯 **Optimizado para rendimiento** con Vite y tree-shaking
+- 🧭 **Navegación suave** entre secciones
+- ♿ **Accesible** siguiendo estándares WCAG
 
-## 🛠️ Tecnologías Utilizadas
+## 🛠️ Stack Tecnológico
 
-- **React** 18.3.1 - Biblioteca de JavaScript para construir interfaces de usuario
-- **TypeScript** - Superset de JavaScript con tipado estático
-- **Vite** - Herramienta de desarrollo y bundler
-- **Tailwind CSS** - Framework de CSS utilitario
-- **Lucide React** - Íconos modernos para React
-- **ESLint** - Linter para mantener código limpio
+### **Frontend Core**
+- **React** 18.3.1 - UI library con hooks modernos
+- **TypeScript** 5.5.3 - Tipado estático y mejor DX
+- **Vite** 5.4.2 - Build tool ultra-rápido con HMR
+
+### **Styling & Design**
+- **Tailwind CSS** 3.4.1 - Utility-first CSS framework
+- **PostCSS** 8.4.35 - CSS processing y autoprefixer
+- **CSS Animations** - Keyframes personalizados para efectos
+
+### **State & Context**
+- **React Context API** - Manejo global del tema
+- **localStorage** - Persistencia de preferencias
+
+### **Icons & Assets**
+- **Lucide React** 0.344.0 - Iconografía moderna y limpia
+
+### **Code Quality**
+- **ESLint** 9.9.1 - Linting y code standards
+- **TypeScript ESLint** - Reglas específicas para TS
+
+> 📖 **Ver documentación técnica completa**: [TECHNICAL_DOCS.md](./TECHNICAL_DOCS.md)
 
 ## 📋 Prerrequisitos
 

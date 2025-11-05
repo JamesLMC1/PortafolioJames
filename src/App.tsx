@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
+import LoadingAnimation from './components/LoadingAnimation';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
@@ -6,9 +8,24 @@ import TechnicalSkills from './components/TechnicalSkills';
 import Footer from './components/Footer';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+  const [showContent, setShowContent] = useState(false);
+
+  const handleLoadingComplete = () => {
+    setIsLoading(false);
+    // Pequeño delay para la transición suave
+    setTimeout(() => {
+      setShowContent(true);
+    }, 100);
+  };
+
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-white dark:bg-gray-900 transition-colors duration-300">
+      {isLoading && <LoadingAnimation onComplete={handleLoadingComplete} />}
+      
+      <div className={`min-h-screen bg-white dark:bg-gray-900 transition-all duration-500 ${
+        showContent ? 'opacity-100' : 'opacity-0'
+      }`}>
         <Navigation />
         <div id="hero">
           <Hero />

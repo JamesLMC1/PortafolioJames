@@ -28,10 +28,10 @@ export default function Projects() {
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-mono font-bold text-black dark:text-white mb-4 transition-colors duration-300">
-            Projects
+            Proyectos
           </h2>
           <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-400 transition-colors duration-300">
-            Cronología de proyectos realizados (2020–2025)
+            Cronología de proyectos realizados (2025–2026)
           </p>
         </div>
 
