@@ -17,44 +17,44 @@ export const projects: Project[] = [
     descripcion: 'Aplicación web de tutorías entre estudiantes y profesores. Fomenta la creatividad, el conocimiento libre y la colaboración.',
     tecnologias: ['Django Rest Framework', 'HTML', 'CSS', 'JavaScript']
   },
-  {
-    id: '3',
-    titulo: 'Sistema de Gestión Educativa',
-    año: 2023,
-    rol: 'Dev',
-    descripcion: 'Plataforma para administración de contenido educativo con panel de control y gestión de usuarios.',
-    tecnologias: ['Angular', 'Tailwind CSS', 'Django Rest Framework', 'MySQL']
-  },
-  {
-    id: '4',
-    titulo: 'Dashboard Analytics',
-    año: 2023,
-    rol: 'Design & Dev',
-    descripcion: 'Visualización de datos y métricas en tiempo real con gráficos interactivos.',
-    tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'Trino']
-  },
-  {
-    id: '5',
-    titulo: 'API REST Microservicios',
-    año: 2022,
-    rol: 'Dev',
-    descripcion: 'Arquitectura de microservicios escalable con autenticación JWT y documentación automática.',
-    tecnologias: ['Django Rest Framework', 'Docker', 'MySQL', 'Postman']
-  },
-  {
-    id: '6',
-    titulo: 'Landing Page Corporativa',
-    año: 2021,
-    rol: 'Design & Dev',
-    descripcion: 'Sitio web corporativo con diseño responsivo y optimización SEO.',
-    tecnologias: ['HTML', 'CSS', 'JavaScript', 'PHP']
-  },
-  {
-    id: '7',
-    titulo: 'Sistema de Inventario',
-    año: 2020,
-    rol: 'Dev',
-    descripcion: 'Aplicación para control de inventario con generación de reportes y alertas.',
-    tecnologias: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS']
-  }
+  // {
+  //   id: '3',
+  //   titulo: 'Sistema de Gestión Educativa',
+  //   año: 2023,
+  //   rol: 'Dev',
+  //   descripcion: 'Plataforma para administración de contenido educativo con panel de control y gestión de usuarios.',
+  //   tecnologias: ['Angular', 'Tailwind CSS', 'Django Rest Framework', 'MySQL']
+  // },
+  // {
+  //   id: '4',
+  //   titulo: 'Dashboard Analytics',
+  //   año: 2023,
+  //   rol: 'Design & Dev',
+  //   descripcion: 'Visualización de datos y métricas en tiempo real con gráficos interactivos.',
+  //   tecnologias: ['Angular', 'TypeScript', 'Tailwind CSS', 'Trino']
+  // },
+  // {
+  //   id: '5',
+  //   titulo: 'API REST Microservicios',
+  //   año: 2022,
+  //   rol: 'Dev',
+  //   descripcion: 'Arquitectura de microservicios escalable con autenticación JWT y documentación automática.',
+  //   tecnologias: ['Django Rest Framework', 'Docker', 'MySQL', 'Postman']
+  // },
+  // {
+  //   id: '6',
+  //   titulo: 'Landing Page Corporativa',
+  //   año: 2021,
+  //   rol: 'Design & Dev',
+  //   descripcion: 'Sitio web corporativo con diseño responsivo y optimización SEO.',
+  //   tecnologias: ['HTML', 'CSS', 'JavaScript', 'PHP']
+  // },
+  // {
+  //   id: '7',
+  //   titulo: 'Sistema de Inventario',
+  //   año: 2020,
+  //   rol: 'Dev',
+  //   descripcion: 'Aplicación para control de inventario con generación de reportes y alertas.',
+  //   tecnologias: ['PHP', 'MySQL', 'JavaScript', 'HTML', 'CSS']
+  // }
 ];

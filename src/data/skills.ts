@@ -3,11 +3,11 @@ import { TechnicalSkill } from '../types';
 export const technicalSkills: TechnicalSkill[] = [
   {
     categoria: 'Backend',
-    tecnologias: ['Django Rest Framework', 'MySQL', 'PHP', 'MongoDB', 'Trino']
+    tecnologias: ['Django Rest Framework', 'MySQL', 'Trino']
   },
   {
     categoria: 'Frontend',
-    tecnologias: ['Angular', 'React', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'TypeScript']
+    tecnologias: ['Angular', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'TypeScript']
   },
   {
     categoria: 'DevOps & Tools',
@@ -15,7 +15,7 @@ export const technicalSkills: TechnicalSkill[] = [
   },
   {
     categoria: 'Experimental',
-    tecnologias: ['GSAP', 'Three.js', 'Tweakpane', 'GLSL Shaders']
+    tecnologias: ['GSAP', 'Three.js', 'Tweakpane', 'GLSL Shaders', 'Trino', 'React', 'MongoDB']
   }
 ];
 
@@ -26,7 +26,7 @@ export const faqItems = [
   },
   {
     pregunta: '¿Cuál es tu stack preferido para frontend?',
-    respuesta: 'Angular con Tailwind CSS para aplicaciones robustas y escalables. Para proyectos experimentales, utilizo React con librerías como GSAP para animaciones y Three.js para efectos 3D.'
+    respuesta: 'Angular con Tailwind CSS para aplicaciones robustas y escalables. Para proyectos experimentales'
   },
   {
     pregunta: '¿Cómo manejas el despliegue y la infraestructura?',
@@ -34,7 +34,7 @@ export const faqItems = [
   },
   {
     pregunta: '¿Qué te inspira en el diseño web?',
-    respuesta: 'Me inspiro en el minimalismo técnico y la experimentación visual. Referencias como The Book of Shaders y el trabajo de diseñadores como Keita Yamada me motivan a explorar nuevas formas de expresión digital.'
+    respuesta: 'Me inspiro en el minimalismo técnico y la experimentación visual.'
   },
   {
     pregunta: '¿Desarrollas solo o en equipo?',
