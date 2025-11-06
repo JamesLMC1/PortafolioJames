@@ -10,7 +10,7 @@ export default function TechnicalSkills() {
   };
 
   return (
-    <section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 transition-colors duration-300 relative">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-mono font-bold text-black dark:text-white mb-4 transition-colors duration-300">

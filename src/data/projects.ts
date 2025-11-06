@@ -16,5 +16,13 @@ export const projects: Project[] = [
     rol: 'Design & Dev',
     descripcion: 'Aplicación web de tutorías entre estudiantes y profesores. Fomenta la creatividad, el conocimiento libre y la colaboración.',
     tecnologias: ['Django Rest Framework', 'HTML', 'CSS', 'JavaScript']
+  },
+    {
+    id: '3',
+    titulo: 'Figma - WEBMENTOR',
+    año: 2025,
+    rol: 'Design',
+    descripcion: 'Diseño realizado en Figma para la aplicación web de tutorías WEBMENTOR, enfocada en la experiencia del usuario y la interfaz intuitiva.',
+    tecnologias: ['Figma']
   }
 ];

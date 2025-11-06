@@ -21,11 +21,13 @@ function App() {
 
   return (
     <ThemeProvider>
+      {/* Animación de carga inicial */}
       {isLoading && <LoadingAnimation onComplete={handleLoadingComplete} />}
       
-      <div className={`min-h-screen bg-white dark:bg-gray-900 transition-all duration-500 ${
+      {/* Contenido principal del portfolio */}
+      <div className={`min-h-screen bg-white dark:bg-gray-900 transition-all duration-500 relative ${
         showContent ? 'opacity-100' : 'opacity-0'
-      }`}>
+      }`} style={{ zIndex: 10 }}>
         <Navigation />
         <div id="hero">
           <Hero />
