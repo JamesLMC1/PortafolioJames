@@ -1,14 +1,22 @@
 export interface Project {
   id: string;
-  titulo: string;
-  año: number;
-  rol: 'Dev' | 'Design' | 'Design & Dev';
-  descripcion: string;
-  tecnologias: string[];
+  title: string;
+  year: number;
+  role: 'Dev' | 'Design' | 'Design & Dev';
+  description: string;
+  technologies: string[];
+  image?: string;
   link?: string;
 }
 
 export interface TechnicalSkill {
-  categoria: string;
-  tecnologias: string[];
+  category: string;
+  technologies: string[];
+}
+
+export interface Experience {
+  company: string;
+  role: string;
+  duration: string;
+  description: string;
 }

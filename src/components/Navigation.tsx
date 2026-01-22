@@ -55,7 +55,7 @@ export default function Navigation() {
             onClick={() => scrollToSection('hero')}
             className="text-lg md:text-xl font-mono font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
-            JLMC
+            JLMC 
           </button>
 
           <div className="flex items-center gap-3 md:hidden">
@@ -89,6 +89,12 @@ export default function Navigation() {
               HABILIDADES
             </button>
             <button
+              onClick={() => scrollToSection('experiences')}
+              className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
+            >
+              EXPERIENCIA
+            </button>
+            <button
               onClick={() => scrollToSection('contact')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
@@ -104,31 +110,6 @@ export default function Navigation() {
           </div>
         </div>
       </nav>
-
-      {isMenuOpen && (
-        <div className="fixed inset-0 z-40 bg-white dark:bg-gray-900 md:hidden">
-          <div className="flex flex-col items-center justify-center h-full space-y-8">
-            <button
-              onClick={() => scrollToSection('projects')}
-              className="text-2xl font-mono text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors tracking-wider"
-            >
-              PROJECTS
-            </button>
-            <button
-              onClick={() => scrollToSection('skills')}
-              className="text-2xl font-mono text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors tracking-wider"
-            >
-              STACK
-            </button>
-            <button
-              onClick={() => scrollToSection('contact')}
-              className="text-2xl font-mono text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors tracking-wider"
-            >
-              CONTACT
-            </button>
-          </div>
-        </div>
-      )}
     </>
   );
 }

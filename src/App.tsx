@@ -6,6 +6,7 @@ import Hero from './components/Hero';
 import Projects from './components/Projects';
 import TechnicalSkills from './components/TechnicalSkills';
 import Footer from './components/Footer';
+import Experiences from './components/Experiences';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -37,6 +38,9 @@ function App() {
         </div>
         <div id="skills">
           <TechnicalSkills />
+        </div>
+        <div id="experiences">
+          <Experiences />
         </div>
         <div id="contact">
           <Footer />

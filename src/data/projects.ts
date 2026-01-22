@@ -3,26 +3,38 @@ import { Project } from '../types';
 export const projects: Project[] = [
   {
     id: '1',
-    titulo: 'Portfolio Experimental',
-    año: 2025,
-    rol: 'Design & Dev',
-    descripcion: 'Sitio experimental basado en estética minimalista, explorando animaciones suaves y diseño tipográfico.',
-    tecnologias: ['React', 'TypeScript', 'Tailwind CSS', 'Vite']
+    title: 'Portfolio Experimental',
+    year: 2025,
+    role: 'Design & Dev',
+    description: 'Sitio experimental basado en estética minimalista, explorando animaciones suaves y diseño tipográfico.',
+    image: '/images/portfolio-experimental.png',
+    technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite']
   },
   {
     id: '2',
-    titulo: 'WEBMENTOR',
-    año: 2025,
-    rol: 'Design & Dev',
-    descripcion: 'Aplicación web de tutorías entre estudiantes y profesores. Fomenta la creatividad, el conocimiento libre y la colaboración.',
-    tecnologias: ['Django Rest Framework', 'HTML', 'CSS', 'JavaScript']
+    title: 'BOGOSPOTS',
+    year: 2025,
+    role: 'Design & Dev',
+    description: 'Aplicación web para descubrir y compartir lugares interesantes en Bogotá, con funcionalidades de geolocalización y reseñas de usuarios.',
+    image: 'prueba.png',
+    technologies: ['Django Rest Framework', 'React', 'PostgreSQL']
   },
-    {
+  {
     id: '3',
-    titulo: 'Figma - WEBMENTOR',
-    año: 2025,
-    rol: 'Design',
-    descripcion: 'Diseño realizado en Figma para la aplicación web de tutorías WEBMENTOR, enfocada en la experiencia del usuario y la interfaz intuitiva.',
-    tecnologias: ['Figma']
+    title: 'IZY DATA',
+    year: 2025,
+    role: 'Dev',
+    description: 'Trabaje con el desarrollo de los primeros laboratorios de la plataforma web de IZY DATA.',
+    image: '/images/webmentor-figma.png',
+    technologies: ['DJANGO REST FRAMEWORK', 'REACT', 'POSTGRESQL','TRINO', 'DOCKER']
+  },
+  {
+    id: '4',
+    title: 'IZY TESTING',
+    year: 2025,
+    role: 'Dev',
+    description: 'Trabaje con el equipo de desarrollo frontend y backend en la solucion IZY TESTING, una plataforma para la gestion y ejecucion de pruebas de software.',
+    image: '/images/webmentor-figma.png',
+    technologies: ['DJANGO REST FRAMEWORK', 'REACT', 'POSTGRESQL','TRINO', 'DOCKER']
   }
 ];

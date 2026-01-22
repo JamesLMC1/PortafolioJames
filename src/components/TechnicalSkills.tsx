@@ -28,10 +28,10 @@ export default function TechnicalSkills() {
               className="border border-gray-200 dark:border-gray-700 p-6 hover:border-black dark:hover:border-white transition-all duration-300 bg-white dark:bg-gray-800"
             >
               <h3 className="text-lg md:text-xl font-mono font-bold text-black dark:text-white mb-4 transition-colors duration-300">
-                {skill.categoria}
+                {skill.category}
               </h3>
               <div className="flex flex-wrap gap-2">
-                {skill.tecnologias.map((tech, techIdx) => (
+                {skill.technologies.map((tech, techIdx) => (
                   <span
                     key={techIdx}
                     className="px-3 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-xs md:text-sm font-mono border border-gray-200 dark:border-gray-600 transition-colors duration-300"
@@ -59,7 +59,7 @@ export default function TechnicalSkills() {
                   className="w-full px-6 py-5 flex items-center justify-between text-left"
                 >
                   <span className="text-sm md:text-base font-mono text-black dark:text-white font-semibold pr-4 transition-colors duration-300">
-                    {item.pregunta}
+                    {item.question}
                   </span>
                   {openIndex === idx ? (
                     <ChevronUp className="w-5 h-5 text-gray-700 dark:text-gray-300 flex-shrink-0 transition-colors duration-300" />
@@ -69,8 +69,8 @@ export default function TechnicalSkills() {
                 </button>
                 {openIndex === idx && (
                   <div className="px-6 pb-5">
-                    <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-                      {item.respuesta}
+                      <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-300 leading-relaxed transition-colors duration-300">
+                      {item.answer}
                     </p>
                   </div>
                 )}
