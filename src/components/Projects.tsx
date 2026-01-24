@@ -2,7 +2,8 @@ import { useState } from 'react';
 import { projects } from '../data/projects';
 import { Project } from '../types';
 import { Code2, Palette, Layers } from 'lucide-react';
-import { SiReact, SiTypescript, SiTailwindcss, SiVite, SiDjango, SiPostgresql, SiFigma, SiAngular, SiDocker, SiTrino } from 'react-icons/si';
+import { SiReact, SiTypescript, SiTailwindcss, SiVite, SiDjango, SiPostgresql, SiFigma, SiAngular, SiDocker, SiTrino, SiGithub } from 'react-icons/si';
+import RepoLinks from './RepoLinks';
 import ImageModal from './ImageModal';
 
 type FilterType = 'All' | 'Dev' | 'Design' | 'Design & Dev';
@@ -18,11 +19,11 @@ export default function Projects() {
   const getRoleIcon = (role: Project['role']) => {
     switch (role) {
       case 'Dev':
-        return <Code2 className="w-4 h-4" />;
+        return <Code2 className="w-4 h-4 text-black dark:text-white" />;
       case 'Design':
-        return <Palette className="w-4 h-4" />;
+        return <Palette className="w-4 h-4 text-black dark:text-white" />;
       case 'Design & Dev':
-        return <Layers className="w-4 h-4" />;
+        return <Layers className="w-4 h-4 text-black dark:text-white" />;
     }
   };
 
@@ -30,30 +31,30 @@ export default function Projects() {
     const t = tech.toLowerCase();
     switch (t) {
       case 'react':
-        return <SiReact className="w-5 h-5 text-blue-400" />;
+        return <SiReact className="w-5 h-5 text-black dark:text-white" />;
       case 'typescript':
-        return <SiTypescript className="w-5 h-5 text-blue-600" />;
+        return <SiTypescript className="w-5 h-5 text-black dark:text-white" />;
       case 'tailwind css':
       case 'tailwind':
-        return <SiTailwindcss className="w-5 h-5 text-sky-400" />;
+        return <SiTailwindcss className="w-5 h-5 text-black dark:text-white" />;
       case 'vite':
-        return <SiVite className="w-5 h-5 text-green-500" />;
+        return <SiVite className="w-5 h-5 text-black dark:text-white" />;
       case 'django rest framework':
       case 'django':
-        return <SiDjango className="w-5 h-5 text-green-800" />;
+        return <SiDjango className="w-5 h-5 text-black dark:text-white" />;
       case 'postgresql':
       case 'postgres':
-        return <SiPostgresql className="w-5 h-5 text-indigo-700" />;
+        return <SiPostgresql className="w-5 h-5 text-black dark:text-white" />;
       case 'figma':
-        return <SiFigma className="w-5 h-5 text-pink-500" />;
+        return <SiFigma className="w-5 h-5 text-black dark:text-white" />;
       case 'angular':
-        return <SiAngular className="w-5 h-5 text-red-600" />;
+        return <SiAngular className="w-5 h-5 text-black dark:text-white" />;
       case 'docker':
-        return <SiDocker className="w-5 h-5 text-blue-600" />;
+        return <SiDocker className="w-5 h-5 text-black dark:text-white" />;
       case 'trino':
-        return <SiTrino className="w-5 h-5 text-indigo-600" />;
+        return <SiTrino className="w-5 h-5 text-black dark:text-white" />;
       default:
-        return <span className="text-xs font-mono">{tech}</span>;
+        return <span className="text-xs font-mono text-black dark:text-white">{tech}</span>;
     }
   };
 
@@ -74,11 +75,10 @@ export default function Projects() {
             <button
               key={type}
               onClick={() => setFilter(type)}
-              className={`px-4 py-2 font-mono text-sm transition-all duration-300 border ${
-                filter === type
+              className={`px-4 py-2 font-mono text-sm transition-all duration-300 border ${filter === type
                   ? 'bg-black dark:bg-white text-white dark:text-black border-black dark:border-white'
                   : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-white'
-              }`}
+                }`}
             >
               {type}
             </button>
@@ -107,12 +107,16 @@ export default function Projects() {
                   </div>
 
                   <h3 className="text-xl md:text-2xl font-mono font-bold text-black dark:text-white mb-2 transition-colors duration-300">
-                    {project.title}
+                    <span className="inline-flex items-center gap-3">
+                      <span>{project.title}</span>
+
+                      <RepoLinks repoFront={project.repoFront} repoBack={project.repoBack} link={project.link} />
+                    </span>
                   </h3>
 
                   <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-300 leading-relaxed mb-4 transition-colors duration-300">
                     {project.description}
-                  </p>   
+                  </p>
 
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (

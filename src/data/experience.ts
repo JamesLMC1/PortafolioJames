@@ -3,7 +3,7 @@ import { Experience } from '../types';
 export const experiences: Experience[] = [
   {
     company: 'Q-VISION',
-    role: 'Aprendiz de Desarrollo de Software',
+    role: 'Aprendiz de innovación y desarrollo de software',
     duration: '28 Agosto 2025 - Presente',
     description: `Desarrollador fullstack en Q-VISION, empresa dedicada a crear soluciones tecnológicas innovadoras.
     Participé en el desarrollo de aplicaciones web con Angular, Django REST Framework, Trino, MySQL y Docker.

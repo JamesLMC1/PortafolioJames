@@ -4,6 +4,7 @@ export const projects: Project[] = [
   {
     id: '1',
     title: 'Portafolio Experimental',
+    repoFront: 'https://github.com/JamesLMC1/PortafolioJames',
     year: 2025,
     role: 'Design & Dev',
     description: 'Sitio experimental basado en estética minimalista, explorando animaciones suaves y diseño tipográfico.',
@@ -13,6 +14,8 @@ export const projects: Project[] = [
   {
     id: '2',
     title: 'BOGOSPOTS',
+    repoBack: 'https://github.com/JamesLMC1/BackEndRedSocialBogota',
+    repoFront: 'https://github.com/JamesLMC1/FrontRedSocialBogota',
     year: 2026,
     role: 'Design & Dev',
     description: 'Proyecto personal en desarrollo. Aplicación web para descubrir y compartir lugares interesantes en Bogotá, con funcionalidades de geolocalización y reseñas de usuarios.',
@@ -24,7 +27,7 @@ export const projects: Project[] = [
     title: 'IZY DATA',
     year: 2025,
     role: 'Dev',
-    description: 'Trabaje con el desarrollo de los primeros laboratorios de la plataforma web de IZY DATA.',
+    description: 'Trabajé con el desarrollo de los primeros laboratorios de la plataforma web de IZY DATA.',
     technologies: ['Django Rest Framework', 'Angular', 'PostgreSQL','Trino', 'Docker', 'Tailwind CSS']
   },
   {
@@ -32,7 +35,7 @@ export const projects: Project[] = [
     title: 'IZY TESTING',
     year: 2026,
     role: 'Dev',
-    description: 'Trabaje con el equipo de desarrollo frontend y backend en la solucion IZY TESTING, una plataforma para la gestion y ejecucion de pruebas de software.',
+    description: 'Trabajé con el equipo de desarrollo frontend y backend en la solución IZY TESTING, una plataforma para la gestión y ejecución de pruebas de software.',
     image: 'Izytesting.png',
     link: 'https://izytesting.com/',
     technologies: ['Django Rest Framework', 'Angular', 'PostgreSQL','Trino', 'Docker']
