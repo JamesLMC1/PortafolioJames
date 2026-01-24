@@ -19,6 +19,6 @@ export const education: Education[] = [
   {
     title: 'Ingeniero en desarrollo de software',
     institution: 'Fundación Universitaria Uninpahu',
-    year: 'Feb 2026',
+    year: 'Feb 2026 -' + ' Presente',
   }
 ];
