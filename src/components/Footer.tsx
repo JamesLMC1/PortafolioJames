@@ -45,24 +45,20 @@ export default function Footer() {
         <div className="flex flex-col md:flex-row justify-between items-start gap-8">
           <form onSubmit={handleSubmit} className="order-2 md:order-1 w-full md:w-1/3 bg-gray-50 dark:bg-gray-800 p-4 rounded-md border border-gray-200 dark:border-gray-700">
             <label className="block text-xs font-mono text-gray-600 dark:text-gray-300 mb-2">Nombre</label>
-            <input value={name} onChange={e => setName(e.target.value)} className="w-full mb-2 p-2 text-sm bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded" placeholder="Tu nombre (opcional)" />
+            <input value={name} onChange={e => setName(e.target.value)} className="w-full mb-2 p-2 text-sm bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400" placeholder="Tu nombre (opcional)" />
 
             <label className="block text-xs font-mono text-gray-600 dark:text-gray-300 mb-2">Email</label>
-            <input value={email} onChange={e => setEmail(e.target.value)} required type="email" className="w-full mb-2 p-2 text-sm bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded" placeholder="tu@correo.com" />
+            <input value={email} onChange={e => setEmail(e.target.value)} required type="email" className="w-full mb-2 p-2 text-sm bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400" placeholder="tu@correo.com" />
 
             <label className="block text-xs font-mono text-gray-600 dark:text-gray-300 mb-2">Mensaje</label>
-            <textarea value={message} onChange={e => setMessage(e.target.value)} required rows={3} className="w-full mb-3 p-2 text-sm bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded" placeholder="Escribe tu mensaje..."></textarea>
+            <textarea value={message} onChange={e => setMessage(e.target.value)} required rows={3} className="w-full mb-3 p-2 text-sm bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 rounded text-black dark:text-white placeholder-gray-500 dark:placeholder-gray-400" placeholder="Escribe tu mensaje..."></textarea>
 
             <div className="flex items-center justify-between">
               <button type="submit" disabled={status === 'sending'} className="px-3 py-2 bg-black text-white font-mono text-sm rounded hover:opacity-90 transition">
                 {status === 'sending' ? 'Enviando...' : 'Enviar'}
               </button>
-              <div className="text-xs font-mono text-gray-500 dark:text-gray-400">
-                {status === 'sent' && 'Enviado ✓'}
-                {status === 'error' && 'Error al enviar'}
-              </div>
             </div>
-            <p className="mt-2 text-xs text-gray-400">Si quieres envío directo al correo sin configurar, dejar `VITE_CONTACT_ENDPOINT` vacío y se abrirá tu cliente de correo. Mensajes irán a {recipientEmail}.</p>
+          
           </form>
 
           <div className="order-1 md:order-2 w-full md:w-2/3">
