@@ -1,5 +1,10 @@
 import { Project } from '../types';
 
+// Importa las imágenes en `src/source/` (crea los archivos allí)
+import PortaImg from '../source/Porta.png';
+import BogospotsImg from '../source/Bogospots.png';
+import IzytestingImg from '../source/Izytesting.png';
+
 export const projects: Project[] = [
   {
     id: '1',
@@ -8,7 +13,7 @@ export const projects: Project[] = [
     year: 2025,
     role: 'Design & Dev',
     description: 'Sitio experimental basado en estética minimalista, explorando animaciones suaves y diseño tipográfico.',
-    image: 'Porta.png',
+    image: PortaImg,
     technologies: ['React', 'TypeScript', 'Tailwind CSS', 'Vite']
   },
   {
@@ -19,7 +24,7 @@ export const projects: Project[] = [
     year: 2026,
     role: 'Design & Dev',
     description: 'Proyecto personal en desarrollo. Aplicación web para descubrir y compartir lugares interesantes en Bogotá, con funcionalidades de geolocalización y reseñas de usuarios.',
-    image: 'Bogospots.png',
+    image: BogospotsImg,
     technologies: ['Django Rest Framework', 'React', 'PostgreSQL', 'Tailwind CSS', 'Figma']
   },
   {
@@ -36,7 +41,7 @@ export const projects: Project[] = [
     year: 2026,
     role: 'Dev',
     description: 'Trabajé con el equipo de desarrollo frontend y backend en la solución IZY TESTING, una plataforma para la gestión y ejecución de pruebas de software.',
-    image: 'Izytesting.png',
+    image: IzytestingImg,
     link: 'https://izytesting.com/',
     technologies: ['Django Rest Framework', 'Angular', 'PostgreSQL','Trino', 'Docker']
   }
