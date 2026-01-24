@@ -140,7 +140,7 @@ export default function Projects() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      onDoubleClick={() => project.image && setModalImage(project.image)}
+                      onClick={() => project.image && setModalImage(project.image)}
                       className="w-full h-32 md:h-40 object-cover rounded-md border border-gray-200 dark:border-gray-600 cursor-pointer"
                     />
 

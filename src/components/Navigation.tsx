@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 // Importamos el hook personalizado para manejar el tema oscuro/claro
 import { useTheme } from '../contexts/ThemeContext';
+import cvPdf from '../source/CV_JameS.pdf';
 
 /**
  * Componente Navigation - Barra de navegación fija responsiva
@@ -107,12 +108,13 @@ export default function Navigation() {
               CONTACTO
             </button>
 
-            <button
-              onClick={() => scrollToSection('cv')}
+            <a
+              href={cvPdf}
+              download
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
               CV
-            </button>
+            </a>
             <button
               onClick={toggleTheme}
               className="p-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
@@ -120,6 +122,51 @@ export default function Navigation() {
             >
               {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
+          </div>
+        </div>
+        {/* Mobile menu - aparece cuando `isMenuOpen` es true */}
+        <div
+          className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
+          aria-hidden={!isMenuOpen}
+        >
+          <div className="px-6 pb-6 pt-2 space-y-2 bg-white/95 dark:bg-gray-900/95 border-b border-gray-200 dark:border-gray-700 backdrop-blur-sm">
+            <button
+              onClick={() => scrollToSection('projects')}
+              className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
+            >
+              PROYECTOS
+            </button>
+            <button
+              onClick={() => scrollToSection('skills')}
+              className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
+            >
+              HABILIDADES
+            </button>
+            <button
+              onClick={() => scrollToSection('education')}
+              className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
+            >
+              EDUCACIÓN
+            </button>
+            <button
+              onClick={() => scrollToSection('experiences')}
+              className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
+            >
+              EXPERIENCIA
+            </button>
+            <button
+              onClick={() => scrollToSection('contact')}
+              className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
+            >
+              CONTACTO
+            </button>
+            <a
+              href={cvPdf}
+              download
+              className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
+            >
+              CV
+            </a>
           </div>
         </div>
       </nav>

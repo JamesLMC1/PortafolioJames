@@ -66,7 +66,7 @@ export default function Education() {
                   <img
                     src={(item as any).image}
                     alt={item.title}
-                    onDoubleClick={() => setModalImage((item as any).image)}
+                    onClick={() => setModalImage((item as any).image)}
                     className="w-full object-cover rounded-md border border-gray-200 dark:border-gray-600 cursor-pointer"
                   />
                 </div>
