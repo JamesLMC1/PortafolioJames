@@ -1,43 +1,47 @@
 import { TechnicalSkill } from '../types';
+import {
+  SiReact, SiTypescript, SiTailwindcss, SiJavascript, SiPostman, SiMongodb, SiGit, SiMysql,
+  SiHtml5, SiCss3, SiDjango, SiPostgresql, SiFigma, SiAngular, SiDocker, SiTrino, SiThreedotjs,
+} from 'react-icons/si';
 
 export const technicalSkills: TechnicalSkill[] = [
   {
     category: 'Backend',
-    technologies: ['Django Rest Framework', 'MySQL', 'Trino']
+    technologies: [
+      { name: 'Django Rest Framework', icon: SiDjango },
+      { name: 'MySQL', icon: SiMysql },
+      { name: 'Trino', icon: SiTrino },
+      { name: 'PostgreSQL', icon: SiPostgresql },
+    ],
   },
   {
     category: 'Frontend',
-    technologies: ['Angular', 'Tailwind CSS', 'HTML', 'CSS', 'JavaScript', 'TypeScript']
+    technologies: [
+      { name: 'Angular', icon: SiAngular },
+      { name: 'React', icon: SiReact },
+      { name: 'Tailwind CSS', icon: SiTailwindcss },
+      { name: 'HTML', icon: SiHtml5 },
+      { name: 'CSS', icon: SiCss3 },
+      { name: 'JavaScript', icon: SiJavascript },
+      { name: 'TypeScript', icon: SiTypescript },
+    ],
   },
   {
     category: 'DevOps & Tools',
-    technologies: ['Docker', 'Git', 'Postman', 'Linux']
+    technologies: [
+      { name: 'Docker', icon: SiDocker },
+      { name: 'Git', icon: SiGit },
+      { name: 'Postman', icon: SiPostman },
+    ],
   },
   {
     category: 'Experimental',
-    technologies: ['GSAP', 'Three.js', 'Tweakpane', 'GLSL Shaders', 'Trino', 'React', 'MongoDB']
-  }
-];
-
-export const faqItems = [
-  {
-    question: '¿Qué tecnologías dominas para el backend?',
-    answer: 'Django Rest Framework es mi especialidad principal, complementado con MySQL para bases de datos relacionales. También tengo experiencia con PHP, MongoDB y Trino para consultas distribuidas.'
+    technologies: [
+      { name: 'Three.js', icon: SiThreedotjs },
+      { name: 'Trino', icon: SiTrino },
+      { name: 'React', icon: SiReact },
+      { name: 'MongoDB', icon: SiMongodb },
+      { name: 'Figma', icon: SiFigma },
+    ],
   },
-  {
-    question: '¿Cuál es tu stack preferido para frontend?',
-    answer: 'Angular con Tailwind CSS para aplicaciones robustas y escalables. Para proyectos experimentales'
-  },
-  {
-    question: '¿Cómo manejas el despliegue y la infraestructura?',
-    answer: 'Utilizo Docker para contenerización, asegurando ambientes consistentes. Git para control de versiones y Postman para documentación y testing de APIs.'
-  },
-  {
-    question: '¿Qué te inspira en el diseño web?',
-    answer: 'Me inspiro en el minimalismo técnico y la experimentación visual.'
-  },
-  {
-    question: '¿Desarrollas solo o en equipo?',
-    answer: 'Tengo experiencia en ambas modalidades. He liderado proyectos individuales completos y colaborado en equipos ágiles, adaptándome a diferentes metodologías de trabajo.'
-  }
 ];

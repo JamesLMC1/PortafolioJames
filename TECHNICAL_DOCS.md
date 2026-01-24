@@ -1,4 +1,4 @@
-# 🔧 Documentación Técnica - Portfolio James
+# 🔧 Documentación Técnica - Portafolio James
 
 ## 📋 Tecnologías Utilizadas
 
@@ -46,7 +46,7 @@ src/
 │   └── LoadingAnimation.tsx # Animación de carga inicial
 ├── contexts/           # Context API de React
 │   └── ThemeContext.tsx # Manejo global del tema oscuro/claro
-├── data/              # Datos estáticos del portfolio
+├── data/              # Datos estáticos del Portafolio
 │   ├── projects.ts    # Información de proyectos
 │   └── skills.ts      # Skills técnicos y FAQ
 ├── types/             # Definiciones de tipos TypeScript
@@ -128,7 +128,7 @@ const scrollToSection = (id: string) => {
 ### **TypeScript**
 - Tipado estricto en todos los componentes
 - Interfaces bien definidas
-- Tipos personalizados para datos del portfolio
+- Tipos personalizados para datos del Portafolio
 
 ### **Accesibilidad (a11y)**
 - Labels ARIA en botones interactivos

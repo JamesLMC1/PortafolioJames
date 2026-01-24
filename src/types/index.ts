@@ -9,9 +9,11 @@ export interface Project {
   link?: string;
 }
 
+import { IconType } from 'react-icons';
+
 export interface TechnicalSkill {
   category: string;
-  technologies: string[];
+  technologies: { name: string; icon?: IconType }[];
 }
 
 export interface Experience {
@@ -19,4 +21,13 @@ export interface Experience {
   role: string;
   duration: string;
   description: string;
+}
+
+export interface Education {
+  id?: string;
+  title: string;
+  year: string | number;
+  description?: string;
+  institution: string;
+  link?: string;
 }

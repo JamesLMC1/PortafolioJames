@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { projects } from '../data/projects';
 import { Project } from '../types';
 import { Code2, Palette, Layers } from 'lucide-react';
-import { SiReact, SiTypescript, SiTailwindcss, SiVite, SiDjango, SiPostgresql, SiFigma } from 'react-icons/si';
+import { SiReact, SiTypescript, SiTailwindcss, SiVite, SiDjango, SiPostgresql, SiFigma, SiAngular, SiDocker, SiTrino } from 'react-icons/si';
+import ImageModal from './ImageModal';
 
 type FilterType = 'All' | 'Dev' | 'Design' | 'Design & Dev';
 
 export default function Projects() {
   const [filter, setFilter] = useState<FilterType>('All');
+  const [modalImage, setModalImage] = useState<string | null>(null);
 
   const filteredProjects = filter === 'All'
     ? projects
@@ -44,13 +46,19 @@ export default function Projects() {
         return <SiPostgresql className="w-5 h-5 text-indigo-700" />;
       case 'figma':
         return <SiFigma className="w-5 h-5 text-pink-500" />;
+      case 'angular':
+        return <SiAngular className="w-5 h-5 text-red-600" />;
+      case 'docker':
+        return <SiDocker className="w-5 h-5 text-blue-600" />;
+      case 'trino':
+        return <SiTrino className="w-5 h-5 text-indigo-600" />;
       default:
         return <span className="text-xs font-mono">{tech}</span>;
     }
   };
 
   return (
-    <section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+    <section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-gray-100 dark:bg-gray-800 transition-colors duration-300">
       <div className="max-w-6xl mx-auto">
         <div className="mb-16">
           <h2 className="text-3xl md:text-5xl font-mono font-bold text-black dark:text-white mb-4 transition-colors duration-300">
@@ -104,7 +112,7 @@ export default function Projects() {
 
                   <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-300 leading-relaxed mb-4 transition-colors duration-300">
                     {project.description}
-                  </p>
+                  </p>   
 
                   <div className="flex flex-wrap gap-2">
                     {project.technologies.map((tech, idx) => (
@@ -116,6 +124,11 @@ export default function Projects() {
                       </span>
                     ))}
                   </div>
+
+                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-4 transition-colors duration-300">
+                    {project.link}
+                  </a>
+
                 </div>
 
                 {project.image && (
@@ -123,7 +136,8 @@ export default function Projects() {
                     <img
                       src={project.image}
                       alt={project.title}
-                      className="w-full h-32 md:h-40 object-cover rounded-md border border-gray-200 dark:border-gray-600"
+                      onDoubleClick={() => project.image && setModalImage(project.image)}
+                      className="w-full h-32 md:h-40 object-cover rounded-md border border-gray-200 dark:border-gray-600 cursor-pointer"
                     />
 
                     <div className="mt-3 flex flex-wrap items-center justify-center gap-3">
@@ -139,6 +153,9 @@ export default function Projects() {
             </div>
           ))}
         </div>
+        {modalImage && (
+          <ImageModal src={modalImage} onClose={() => setModalImage(null)} />
+        )}
       </div>
     </section>
   );

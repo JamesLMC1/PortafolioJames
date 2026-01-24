@@ -9,7 +9,7 @@ interface LoadingAnimationProps {
 /**
  * LoadingAnimation - Componente de carga con animación de texto
  * Animación de texto tipo máquina de escribir elegante
- * Se adapta automáticamente al tema claro/oscuro del portfolio
+ * Se adapta automáticamente al tema claro/oscuro del Portafolio
  */
 export default function LoadingAnimation({ onComplete, speed = 70 }: LoadingAnimationProps) {
   const lines = ['Portafolio de:', 'James Leonardo Martínez Castañeda'];

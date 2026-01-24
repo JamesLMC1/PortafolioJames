@@ -2,7 +2,7 @@
 import { ArrowDown } from 'lucide-react';
 
 /**
- * Componente Hero - Sección principal del portfolio
+ * Componente Hero - Sección principal del Portafolio
  * Esta es la primera sección que ve el usuario al cargar la página
  * Incluye animaciones CSS personalizadas para el nombre
  */
@@ -23,7 +23,9 @@ export default function Hero() {
         <div className="mb-8 space-y-2">
           {/* Subtítulo/profesión */}
           <p className="text-sm md:text-base font-mono text-gray-500 dark:text-gray-400 tracking-wider">
-            Tecnólogo en Desarrollo de software
+            Desarrollador 
+            <span className="text-black dark:text-white font-semibold"> Full Stack</span>,
+            Junior
           </p>
           {/* 
            * Nombre principal con animaciones personalizadas
@@ -50,13 +52,13 @@ export default function Hero() {
            * - Palabras clave resaltadas con spans que cambian color según el tema
            */}
           <p className="text-base md:text-lg font-mono text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-            Busco expresar nuevas formas de diseño y desarrollo a través de la
-            <span className="text-black dark:text-white font-semibold"> creatividad</span>, la
-            <span className="text-black dark:text-white font-semibold"> experimentación técnica </span>
-            y la optimización de la experiencia digital.
+            Soy Desarrollador FullStack Junior con experiencia en
+            <span className="text-black dark:text-white font-semibold"> Angular</span>,
+            <span className="text-black dark:text-white font-semibold"> Django-Rest-Framework</span> y
+            <span className="text-black dark:text-white font-semibold"> TypeScript</span>. Busco crecer en equipos ágiles desarrollando soluciones de back y front.
           </p>
 
-          {/* Párrafo secundario con filosofía de trabajo */}
+
           <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-400 transition-colors duration-300">
             El desarrollo de software también puede ser un arte técnico,
             combinando estructura, lógica y estética.

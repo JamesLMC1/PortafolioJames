@@ -4,6 +4,7 @@ import LoadingAnimation from './components/LoadingAnimation';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import Projects from './components/Projects';
+import Education from './components/Education';
 import TechnicalSkills from './components/TechnicalSkills';
 import Footer from './components/Footer';
 import Experiences from './components/Experiences';
@@ -25,7 +26,7 @@ function App() {
       {/* Animación de carga inicial */}
       {isLoading && <LoadingAnimation onComplete={handleLoadingComplete} />}
       
-      {/* Contenido principal del portfolio */}
+      {/* Contenido principal del Portafolio */}
       <div className={`min-h-screen bg-white dark:bg-gray-900 transition-all duration-500 relative ${
         showContent ? 'opacity-100' : 'opacity-0'
       }`} style={{ zIndex: 10 }}>
@@ -38,6 +39,9 @@ function App() {
         </div>
         <div id="skills">
           <TechnicalSkills />
+        </div>
+          <div id="education">
+          <Education />
         </div>
         <div id="experiences">
           <Experiences />

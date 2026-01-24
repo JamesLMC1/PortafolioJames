@@ -37,7 +37,7 @@ export default function Footer() {
 
           <div className="flex items-center gap-6">
             <a
-              href="https://github.com"
+              href="https://github.com/jamesleonardo230"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 dark:text-gray-300 hover:text-white transition-colors duration-300"
@@ -46,7 +46,7 @@ export default function Footer() {
               <Github className="w-5 h-5" />
             </a>
             <a
-              href="https://linkedin.com"
+              href="https://linkedin.com/in/jamesleonardo230"
               target="_blank"
               rel="noopener noreferrer"
               className="text-gray-400 dark:text-gray-300 hover:text-white transition-colors duration-300"
@@ -55,7 +55,7 @@ export default function Footer() {
               <Linkedin className="w-5 h-5" />
             </a>
             <a
-              href="mailto:contacto@ejemplo.com"
+              href="mailto:jamesleonardo230@gmail.com"
               className="text-gray-400 dark:text-gray-300 hover:text-white transition-colors duration-300"
               aria-label="Email"
             >

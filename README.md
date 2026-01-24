@@ -1,6 +1,6 @@
-# 🚀 Portfolio James
+# 🚀 Portafolio James
 
-Un portfolio moderno y responsivo construido con React, TypeScript, Vite y Tailwind CSS.
+Un Portafolio moderno y responsivo construido con React, TypeScript, Vite y Tailwind CSS.
 
 ## ✨ Características
 
@@ -138,7 +138,7 @@ PortafolioJames/
 Si necesitas configurar variables de entorno, crea un archivo `.env` en la raíz del proyecto:
 
 ```env
-VITE_APP_TITLE=Portfolio James
+VITE_APP_TITLE=Portafolio James
 VITE_API_URL=https://tu-api.com
 ```
 

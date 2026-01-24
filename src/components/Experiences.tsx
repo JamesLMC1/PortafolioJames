@@ -1,10 +1,9 @@
 
-import React from 'react';
 import { experiences } from '../data/experience';
 
 export default function Experiences() {
 	return (
-		<section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-gray-50 dark:bg-gray-800 transition-colors duration-300">
+		<section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 transition-colors duration-300 relative">
 			<div className="max-w-6xl mx-auto">
 				<div className="mb-16">
 					<h2 className="text-3xl md:text-5xl font-mono font-bold text-black dark:text-white mb-4">
@@ -19,7 +18,7 @@ export default function Experiences() {
 					{experiences.map((exp, idx) => (
 						<div
 							key={idx}
-							className="bg-white dark:bg-gray-700 border border-gray-200 dark:border-gray-600 p-6 md:p-8 transition-all duration-300 hover:border-black dark:hover:border-white hover:shadow-lg"
+							className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-6 md:p-8 transition-all duration-300 hover:border-black dark:hover:border-white hover:shadow-lg"
 						>
 							<div className="flex items-start justify-between mb-2">
 								<div>

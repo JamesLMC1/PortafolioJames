@@ -89,6 +89,12 @@ export default function Navigation() {
               HABILIDADES
             </button>
             <button
+              onClick={() => scrollToSection('education')}
+              className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
+            >
+              EDUCACIÓN
+            </button>
+            <button
               onClick={() => scrollToSection('experiences')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
@@ -99,6 +105,13 @@ export default function Navigation() {
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
               CONTACTO
+            </button>
+
+            <button
+              onClick={() => scrollToSection('cv')}
+              className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
+            >
+              CV
             </button>
             <button
               onClick={toggleTheme}
