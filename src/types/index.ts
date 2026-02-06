@@ -7,8 +7,7 @@ export interface Project {
   technologies: string[];
   image?: string;
   link?: string;
-  repoFront?: string;
-  repoBack?: string;
+  repo?: string;
 }
 
 import { IconType } from 'react-icons';

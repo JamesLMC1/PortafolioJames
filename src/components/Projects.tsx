@@ -2,9 +2,8 @@ import { useState } from 'react';
 import { projects } from '../data/projects';
 import { Project } from '../types';
 import { Code2, Palette, Layers } from 'lucide-react';
-import { SiReact, SiTypescript, SiTailwindcss, SiVite, SiDjango, SiPostgresql, SiFigma, SiAngular, SiDocker, SiTrino, SiGithub } from 'react-icons/si';
-import RepoLinks from './RepoLinks';
-import ImageModal from './ImageModal';
+import { SiReact, SiTypescript, SiTailwindcss, SiVite, SiDjango, SiPostgresql, SiAngular, SiTrino } from 'react-icons/si';
+import ImageModal from './ImageModal'
 
 type FilterType = 'All' | 'Dev' | 'Design' | 'Design & Dev';
 
@@ -45,12 +44,8 @@ export default function Projects() {
       case 'postgresql':
       case 'postgres':
         return <SiPostgresql className="w-5 h-5 text-black dark:text-white" />;
-      case 'figma':
-        return <SiFigma className="w-5 h-5 text-black dark:text-white" />;
-      case 'angular':
+     case 'angular':
         return <SiAngular className="w-5 h-5 text-black dark:text-white" />;
-      case 'docker':
-        return <SiDocker className="w-5 h-5 text-black dark:text-white" />;
       case 'trino':
         return <SiTrino className="w-5 h-5 text-black dark:text-white" />;
       default:
@@ -108,9 +103,18 @@ export default function Projects() {
 
                   <h3 className="text-xl md:text-2xl font-mono font-bold text-black dark:text-white mb-2 transition-colors duration-300">
                     <span className="inline-flex items-center gap-3">
-                      <span>{project.title}</span>
-
-                      <RepoLinks repoFront={project.repoFront} repoBack={project.repoBack} link={project.link} />
+                      {project.link || project.repo ? (
+                        <a
+                          href={project.link ?? project.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          {project.title}
+                        </a>
+                      ) : (
+                        <span>{project.title}</span>
+                      )}
                     </span>
                   </h3>
 
@@ -129,9 +133,7 @@ export default function Projects() {
                     ))}
                   </div>
 
-                  <a href={project.link} target="_blank" rel="noopener noreferrer" className="text-sm font-mono text-gray-500 dark:text-gray-400 mb-4 transition-colors duration-300">
-                    {project.link}
-                  </a>
+                  {/* Optional raw link removed — title now links to `link` or `repo` when provided */}
 
                 </div>
 

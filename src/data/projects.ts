@@ -9,7 +9,7 @@ export const projects: Project[] = [
   {
     id: '1',
     title: 'Portafolio Experimental',
-    repoFront: 'https://github.com/JamesLMC1/PortafolioJames',
+    repo: 'https://github.com/JamesLMC1/PortafolioJames',
     year: 2025,
     role: 'Design & Dev',
     description: 'Sitio experimental basado en estética minimalista, explorando animaciones suaves y diseño tipográfico.',
@@ -19,13 +19,12 @@ export const projects: Project[] = [
   {
     id: '2',
     title: 'BOGOSPOTS',
-    repoBack: 'https://github.com/JamesLMC1/BackEndRedSocialBogota',
-    repoFront: 'https://github.com/JamesLMC1/FrontRedSocialBogota',
+    repo: 'https://github.com/orgs/RinconesCO/repositories',
     year: 2026,
     role: 'Design & Dev',
     description: 'Proyecto personal en desarrollo. Aplicación web para descubrir y compartir lugares interesantes en Bogotá, con funcionalidades de geolocalización y reseñas de usuarios.',
     image: BogospotsImg,
-    technologies: ['Django Rest Framework', 'React', 'PostgreSQL', 'Tailwind CSS', 'Figma']
+    technologies: ['Django Rest Framework', 'React', 'PostgreSQL', 'Tailwind CSS']
   },
   {
     id: '3',
@@ -33,7 +32,7 @@ export const projects: Project[] = [
     year: 2025,
     role: 'Dev',
     description: 'Trabajé con el desarrollo de los primeros laboratorios de la plataforma web de IZY DATA.',
-    technologies: ['Django Rest Framework', 'Angular', 'PostgreSQL','Trino', 'Docker', 'Tailwind CSS']
+    technologies: ['Django Rest Framework', 'Angular', 'PostgreSQL','Trino', 'Tailwind CSS']
   },
   {
     id: '4',
@@ -43,6 +42,6 @@ export const projects: Project[] = [
     description: 'Trabajé con el equipo de desarrollo frontend y backend en la solución IZY TESTING, una plataforma para la gestión y ejecución de pruebas de software.',
     image: IzytestingImg,
     link: 'https://izytesting.com/',
-    technologies: ['Django Rest Framework', 'Angular', 'PostgreSQL','Trino', 'Docker']
+    technologies: ['Django Rest Framework', 'Angular', 'PostgreSQL']
   }
 ];

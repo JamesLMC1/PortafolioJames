@@ -7,7 +7,7 @@ export default function Experiences() {
 			<div className="max-w-6xl mx-auto">
 				<div className="mb-16">
 					<h2 className="text-3xl md:text-5xl font-mono font-bold text-black dark:text-white mb-4">
-						Experiencias +1
+						Experiencias laborales
 					</h2>
 					<p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-400">
 						Historial laboral y roles

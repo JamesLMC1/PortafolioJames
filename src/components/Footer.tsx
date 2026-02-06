@@ -60,16 +60,6 @@ export default function Footer() {
                 </p>
               </div>
             </div>
-
-            <div>
-              <p className="text-sm font-mono text-gray-400 dark:text-gray-300 mb-2 transition-colors duration-300">
-                Diseñado y desarrollado con atención al detalle
-              </p>
-              <p className="text-xs font-mono text-gray-600 dark:text-gray-400 transition-colors duration-300 mb-4">
-                Inspirado en el minimalismo técnico y la experimentación visual
-              </p>
-
-            </div>
           </div>
         </div>
       </div>

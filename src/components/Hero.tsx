@@ -52,10 +52,10 @@ export default function Hero() {
            * - Palabras clave resaltadas con spans que cambian color según el tema
            */}
           <p className="text-base md:text-lg font-mono text-gray-700 dark:text-gray-300 leading-relaxed transition-colors duration-300">
-            Soy Desarrollador FullStack Junior con experiencia en
-            <span className="text-black dark:text-white font-semibold"> Angular</span>,
-            <span className="text-black dark:text-white font-semibold"> Django-Rest-Framework</span> y
-            <span className="text-black dark:text-white font-semibold"> TypeScript</span>. Busco crecer en equipos ágiles desarrollando soluciones de back y front.
+            Soy Desarrollador FullStack Junior con experiencia en frontend con 
+            <span className="text-black dark:text-white font-semibold"> Angular</span>, 
+              <span className="text-black dark:text-white font-semibold"> TypeScript</span> y backend con
+            <span className="text-black dark:text-white font-semibold"> Django-Rest-Framework</span>. Busco crecer en equipos ágiles desarrollando soluciones de backend y frontend.
           </p>
 
 
