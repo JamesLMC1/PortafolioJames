@@ -18,6 +18,7 @@ export const technicalSkills: TechnicalSkill[] = [
     category: 'Frontend',
     technologies: [
       { name: 'HTML', icon: SiHtml5 },
+      { name: 'Angular', icon: SiAngular },
       { name: 'CSS', icon: SiCss3 },
       { name: 'JavaScript', icon: SiJavascript },
       { name: 'TypeScript', icon: SiTypescript },

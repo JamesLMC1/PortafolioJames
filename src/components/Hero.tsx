@@ -16,13 +16,13 @@ export default function Hero() {
      * - bg-white/dark:bg-gray-900: colores adaptativos al tema
      * - transition-colors: transición suave entre temas
      */
-    <section className="min-h-screen flex flex-col justify-center items-start px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 transition-colors duration-300">
+    <section className="min-h-screen flex flex-col justify-center items-start px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 transition-colors duration-300 pt-20">
       {/* Contenedor principal con ancho máximo para no extenderse demasiado */}
       <div className="max-w-4xl">
         {/* Cabecera con título profesional y nombre */}
-        <div className="mb-8 space-y-2">
+        <div className="mb-8 space-y-1">
           {/* Subtítulo/profesión */}
-          <p className="text-sm md:text-base font-mono text-gray-500 dark:text-gray-400 tracking-wider">
+          <p className="text-sm md:text-base font-mono text-gray-500 dark:text-gray-400 tracking-wider mt-16 md:mt-0">
             Desarrollador 
             <span className="text-black dark:text-white font-semibold"> Full Stack</span>,
             Junior
@@ -45,7 +45,7 @@ export default function Hero() {
         </div>
 
         {/* Sección de descripción personal y profesional */}
-        <div className="space-y-6 max-w-2xl">
+        <div className="space-y-1 max-w-2xl mt-8">
           {/* 
            * Párrafo principal con descripción profesional
            * - leading-relaxed: espaciado de línea cómodo para lectura
