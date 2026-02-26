@@ -4,7 +4,8 @@ import { useState, useEffect } from 'react';
 import { Menu, X, Moon, Sun } from 'lucide-react';
 // Importamos el hook personalizado para manejar el tema oscuro/claro
 import { useTheme } from '../contexts/ThemeContext';
-import cvPdf from '../source/CV_JameS.pdf';
+import cvPdf from '../source/CV_James_Leonardo_Martinez_Castañeda.pdf';
+
 
 /**
  * Componente Navigation - Barra de navegación fija responsiva
