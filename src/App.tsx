@@ -15,7 +15,6 @@ function App() {
 
   const handleLoadingComplete = () => {
     setIsLoading(false);
-    // Pequeño delay para la transición suave
     setTimeout(() => {
       setShowContent(true);
     }, 100);
@@ -23,10 +22,8 @@ function App() {
 
   return (
     <ThemeProvider>
-      {/* Animación de carga inicial */}
       {isLoading && <LoadingAnimation onComplete={handleLoadingComplete} />}
-      
-      {/* Contenido principal del Portafolio */}
+
       <div className={`min-h-screen bg-white dark:bg-gray-900 transition-all duration-500 relative ${
         showContent ? 'opacity-100' : 'opacity-0'
       }`} style={{ zIndex: 10 }}>
@@ -40,7 +37,7 @@ function App() {
         <div id="skills">
           <TechnicalSkills />
         </div>
-          <div id="education">
+        <div id="education">
           <Education />
         </div>
         <div id="experiences">
@@ -50,6 +47,9 @@ function App() {
           <Footer />
         </div>
       </div>
+
+      {/* Overlay de textura grain/noise global — sutil, solo lectura */}
+      <div className="noise-overlay" aria-hidden="true" />
     </ThemeProvider>
   );
 }
