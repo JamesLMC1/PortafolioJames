@@ -2,23 +2,36 @@ import { Education } from '../types';
 
 export const education: Education[] = [
   {
-    title: 'Bachiller',
-    institution: 'Instituto Técnico Industrial Centro Don Bosco',
-    year: 'Feb 2016 -' + ' Dic 2022',
-  },
-  {
-    title: 'Tecnólogo en Desarrollo de Software',
+    title: {
+      es: 'Ingeniero en desarrollo de software',
+      en: 'Software Engineering Degree',
+    },
     institution: 'Fundación Universitaria Uninpahu',
-    year: 'Ene 2023 -' + ' Dic 2025',
+    year: {
+      es: 'Feb 2026 - En curso',
+      en: 'Feb 2026 - In progress',
+    },
   },
   {
-    title: 'Auxiliar en publicaciones gráficas',
-    institution: 'Instituto Técnico Industrial Centro Don Bosco',
-    year: 'Feb 2019 -' + ' Dic 2022',
-  },
-  {
-    title: 'Ingeniero en desarrollo de software',
+    title: {
+      es: 'Tecnólogo en Desarrollo de Software',
+      en: 'Software Development Technologist',
+    },
     institution: 'Fundación Universitaria Uninpahu',
-    year: 'Feb 2026 -' + ' En curso',
-  }
+    year: {
+      es: 'Ene 2023 - Dic 2025',
+      en: 'Jan 2023 - Dec 2025',
+    },
+  },
+  {
+    title: {
+      es: 'Bachiller',
+      en: 'High School Diploma',
+    },
+    institution: 'Instituto Técnico Industrial Centro Don Bosco',
+    year: {
+      es: 'Feb 2016 - Dic 2022',
+      en: 'Feb 2016 - Dec 2022',
+    },
+  },
 ];

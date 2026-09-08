@@ -1,35 +1,37 @@
 import { useState } from 'react';
 import { projects } from '../data/projects';
 import { Project } from '../types';
-import { Code2, Palette, Layers } from 'lucide-react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { ui } from '../data/translations';
+import { Code2, } from 'lucide-react';
 import { SiReact, SiTypescript, SiTailwindcss, SiVite, SiDjango, SiPostgresql, SiAngular, SiTrino } from 'react-icons/si';
 import ImageModal from './ImageModal';
 import Reveal from './Reveal';
+import Tilt3D from './Tilt3D';
 
-type FilterType = 'All' | 'Dev' | 'Design' | 'Design & Dev';
+type FilterType = 'all' | 'personal' | 'company';
 
 export default function Projects() {
-  const [filter, setFilter] = useState<FilterType>('All');
+  const [filter, setFilter] = useState<FilterType>('all');
   const [modalImage, setModalImage] = useState<string | null>(null);
+  const { t } = useLanguage();
 
-  const filteredProjects = filter === 'All'
+  const filteredProjects = filter === 'all'
     ? projects
-    : projects.filter(p => p.role === filter);
+    : projects.filter(p => p.category === filter);
 
   const getRoleIcon = (role: Project['role']) => {
     switch (role) {
       case 'Dev':
         return <Code2 className="w-4 h-4 text-black dark:text-white" />;
-      case 'Design':
-        return <Palette className="w-4 h-4 text-black dark:text-white" />;
-      case 'Design & Dev':
-        return <Layers className="w-4 h-4 text-black dark:text-white" />;
+      default:
+        return null;
     }
   };
 
   const getTechIcon = (tech: string) => {
-    const t = tech.toLowerCase();
-    switch (t) {
+    const tch = tech.toLowerCase();
+    switch (tch) {
       case 'react':
         return <SiReact className="w-5 h-5 text-black dark:text-white" />;
       case 'typescript':
@@ -54,9 +56,14 @@ export default function Projects() {
     }
   };
 
+  const filters: { key: FilterType; label: string }[] = [
+    { key: 'all', label: t(ui.projects.all) },
+    { key: 'personal', label: t(ui.projects.personal) },
+    { key: 'company', label: t(ui.projects.company) },
+  ];
+
   return (
     <section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-gray-100 dark:bg-gray-800 transition-colors duration-300 relative dot-grid">
-      {/* Línea diagonal decorativa */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden" aria-hidden="true">
         <div className="absolute -top-20 -right-20 w-[600px] h-[1px] bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent rotate-[25deg] opacity-40" />
         <div className="absolute top-1/3 -left-10 w-[400px] h-[1px] bg-gradient-to-r from-transparent via-gray-300 dark:via-gray-600 to-transparent -rotate-[15deg] opacity-30" />
@@ -66,26 +73,26 @@ export default function Projects() {
         <Reveal>
           <div className="mb-16">
             <h2 className="text-3xl md:text-5xl font-mono font-bold text-black dark:text-white mb-4 transition-colors duration-300">
-              Proyectos
+              {t(ui.projects.title)}
             </h2>
             <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-400 transition-colors duration-300">
-              Cronología de proyectos realizados (2025–2026)
+              {t(ui.projects.subtitle)}
             </p>
           </div>
         </Reveal>
 
         <Reveal delay={80}>
           <div className="mb-12 flex flex-wrap gap-3">
-            {(['All', 'Dev', 'Design', 'Design & Dev'] as FilterType[]).map((type) => (
+            {filters.map(({ key, label }) => (
               <button
-                key={type}
-                onClick={() => setFilter(type)}
-                className={`px-4 py-2 font-mono text-sm transition-all duration-300 border ${filter === type
+                key={key}
+                onClick={() => setFilter(key)}
+                className={`px-4 py-2 font-mono text-sm transition-all duration-300 border ${filter === key
                     ? 'bg-black dark:bg-white text-white dark:text-black border-black dark:border-white'
                     : 'bg-white dark:bg-gray-700 text-gray-700 dark:text-gray-300 border-gray-300 dark:border-gray-600 hover:border-black dark:hover:border-white'
                   }`}
               >
-                {type}
+                {label}
               </button>
             ))}
           </div>
@@ -94,11 +101,11 @@ export default function Projects() {
         <div className="space-y-6">
           {filteredProjects.map((project, idx) => (
             <Reveal key={project.id} delay={idx * 120}>
-              <div
-                className="animate-float glass-card glow-on-hover border border-gray-200 dark:border-gray-600 p-6 md:p-8 transition-[background-color,border-color,box-shadow] duration-300 hover:border-black dark:hover:border-white hover:shadow-lg group relative overflow-hidden"
-                style={{ animationDelay: `${(idx % 4) * 1.2}s` }}
-              >
-                {/* Acento decorativo en la esquina */}
+              <Tilt3D maxTilt={6}>
+                <div
+                  className="animate-float glass-card glow-on-hover card-3d border border-gray-200 dark:border-gray-600 p-6 md:p-8 transition-[background-color,border-color,box-shadow] duration-300 hover:border-black dark:hover:border-white hover:shadow-lg group relative overflow-hidden"
+                  style={{ animationDelay: `${(idx % 4) * 1.2}s` }}
+                >
                 <div className="absolute top-0 right-0 w-16 h-16 pointer-events-none" aria-hidden="true">
                   <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-l from-gray-400 dark:from-gray-500 to-transparent opacity-40" />
                   <div className="absolute top-0 right-0 h-full w-[1px] bg-gradient-to-b from-gray-400 dark:from-gray-500 to-transparent opacity-40" />
@@ -137,7 +144,7 @@ export default function Projects() {
                     </h3>
 
                     <p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-300 leading-relaxed mb-4 transition-colors duration-300">
-                      {project.description}
+                      {t(project.description)}
                     </p>
 
                     <div className="flex flex-wrap gap-2">
@@ -171,7 +178,8 @@ export default function Projects() {
                     </div>
                   )}
                 </div>
-              </div>
+                </div>
+              </Tilt3D>
             </Reveal>
           ))}
         </div>

@@ -1,8 +1,11 @@
 import { Github, Linkedin, Mail } from 'lucide-react';
 import { SiWhatsapp } from 'react-icons/si';
+import { useLanguage } from '../contexts/LanguageContext';
+import { ui } from '../data/translations';
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
+  const { t } = useLanguage();
 
   return (
     <footer className="relative overflow-hidden bg-black dark:bg-gray-950 text-white py-16 px-6 md:px-12 lg:px-24 transition-colors duration-300">
@@ -31,11 +34,11 @@ export default function Footer() {
           <div className="w-full">
             <div className="mb-6 border-b border-gray-700 dark:border-gray-800 pb-6">
               <h3 className="text-2xl md:text-3xl font-mono font-bold mb-4">
-                Contacto
+                {t(ui.footer.title)}
               </h3>
               <div className="space-y-4 text-sm md:text-base font-mono text-gray-400 dark:text-gray-300 leading-relaxed transition-colors duration-300">
                 <p>
-                  Podras encontrar mis diferentes formas de contacto aquí.
+                  {t(ui.footer.description)}
                 </p>
                 <div className="mt-2 flex items-center gap-6">
                 <a
@@ -76,7 +79,7 @@ export default function Footer() {
               </div>
 
                 <p className="text-gray-500 dark:text-gray-400 transition-colors duration-300">
-                  © {currentYear} James Leonardo Martínez Castañeda. Todos los derechos reservados.
+                  © {currentYear} James Leonardo Martínez Castañeda. {t(ui.footer.rights)}
                 </p>
               </div>
             </div>

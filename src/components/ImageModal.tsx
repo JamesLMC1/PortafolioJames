@@ -1,4 +1,6 @@
 import { useEffect } from 'react';
+import { useLanguage } from '../contexts/LanguageContext';
+import { ui } from '../data/translations';
 
 type Props = {
   src: string | null;
@@ -6,6 +8,8 @@ type Props = {
 };
 
 export default function ImageModal({ src, onClose }: Props) {
+  const { t } = useLanguage();
+
   useEffect(() => {
     if (!src) return;
     const handleKey = (e: KeyboardEvent) => {
@@ -33,20 +37,20 @@ export default function ImageModal({ src, onClose }: Props) {
             onClick={(e) => e.stopPropagation()}
             className="px-3 py-1 bg-white/90 dark:bg-gray-800/90 text-sm rounded-md shadow-sm text-black dark:text-white"
           >
-            Abrir
+            {t(ui.imageModal.open)}
           </a>
           <button
             onClick={(e) => { e.stopPropagation(); onClose(); }}
             className="px-3 py-1 bg-white/90 dark:bg-gray-800/90 text-sm rounded-md shadow-sm text-black dark:text-white"
-            aria-label="Cerrar imagen"
+            aria-label={t(ui.imageModal.closeImage)}
           >
-            Cerrar
+            {t(ui.imageModal.close)}
           </button>
         </div>
 
         <img
           src={src}
-          alt="Enlarged"
+          alt={t(ui.imageModal.enlarged)}
           onClick={(e) => e.stopPropagation()}
           className="w-auto h-auto max-w-full max-h-[90vh] rounded-md shadow-2xl"
         />

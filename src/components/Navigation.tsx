@@ -1,36 +1,21 @@
-// Importamos React hooks para manejar estado y efectos
 import { useState, useEffect } from 'react';
-// Importamos íconos de Lucide React para el menú móvil y toggle de tema
 import { Menu, X, Moon, Sun } from 'lucide-react';
-// Importamos el hook personalizado para manejar el tema oscuro/claro
 import { useTheme } from '../contexts/ThemeContext';
+import { useLanguage } from '../contexts/LanguageContext';
+import { ui } from '../data/translations';
 import cvPdf from '../source/CV_James_Leonardo_Martinez_Castañeda.pdf';
 
-
-/**
- * Componente Navigation - Barra de navegación fija responsiva
- * Incluye:
- * - Navegación adaptativa que cambia con el scroll
- * - Menú hamburguesa para dispositivos móviles
- * - Toggle para cambiar entre tema claro y oscuro
- * - Navegación suave entre secciones usando scroll
- */
 export default function Navigation() {
-  // Estado para detectar si el usuario ha hecho scroll (cambia el estilo de la barra)
   const [isScrolled, setIsScrolled] = useState(false);
-  // Estado para controlar si el menú móvil está abierto
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  // Obtenemos el tema actual y la función para cambiarlo del contexto
   const { theme, toggleTheme } = useTheme();
+  const { toggleLang, t } = useLanguage();
 
-  // Effect para detectar el scroll y cambiar el estilo de la navegación
   useEffect(() => {
     const handleScroll = () => {
-      // Si el scroll es mayor a 50px, activamos el estilo "scrolled"
       setIsScrolled(window.scrollY > 50);
     };
 
-    // Agregamos el event listener para el scroll
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -57,21 +42,28 @@ export default function Navigation() {
             onClick={() => scrollToSection('hero')}
             className="text-lg md:text-xl font-mono font-bold text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
           >
-            JLMC 
+            JLMC
           </button>
 
           <div className="flex items-center gap-3 md:hidden">
             <button
+              onClick={toggleLang}
+              className="text-xs font-mono font-bold px-2 py-1 border border-gray-300 dark:border-gray-600 text-black dark:text-white hover:border-black dark:hover:border-white transition-colors"
+              aria-label="Toggle language"
+            >
+              {t(ui.nav.langLabel)}
+            </button>
+            <button
               onClick={toggleTheme}
               className="p-2 text-black dark:text-white hover:text-gray-600 dark:hover:text-gray-300 transition-colors"
-              aria-label="Toggle theme"
+              aria-label={t(ui.nav.toggleTheme)}
             >
               {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="text-black dark:text-white"
-              aria-label="Toggle menu"
+              aria-label={t(ui.nav.toggleMenu)}
             >
               {isMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -82,31 +74,31 @@ export default function Navigation() {
               onClick={() => scrollToSection('projects')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              PROYECTOS
+              {t(ui.nav.projects)}
             </button>
             <button
               onClick={() => scrollToSection('skills')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              HABILIDADES
+              {t(ui.nav.skills)}
             </button>
             <button
               onClick={() => scrollToSection('education')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              EDUCACIÓN
+              {t(ui.nav.education)}
             </button>
             <button
               onClick={() => scrollToSection('experiences')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              EXPERIENCIA
+              {t(ui.nav.experience)}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              CONTACTO
+              {t(ui.nav.contact)}
             </button>
 
             <a
@@ -114,18 +106,24 @@ export default function Navigation() {
               download
               className="text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors tracking-wider"
             >
-              CV
+              {t(ui.nav.cv)}
             </a>
+            <button
+              onClick={toggleLang}
+              className="text-xs font-mono font-bold px-2 py-1 border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:border-black dark:hover:border-white transition-colors"
+              aria-label="Toggle language"
+            >
+              {t(ui.nav.langLabel)}
+            </button>
             <button
               onClick={toggleTheme}
               className="p-2 text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors"
-              aria-label="Toggle theme"
+              aria-label={t(ui.nav.toggleTheme)}
             >
               {theme === 'dark' ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
             </button>
           </div>
         </div>
-        {/* Mobile menu - aparece cuando `isMenuOpen` es true */}
         <div
           className={`md:hidden ${isMenuOpen ? 'block' : 'hidden'}`}
           aria-hidden={!isMenuOpen}
@@ -135,38 +133,38 @@ export default function Navigation() {
               onClick={() => scrollToSection('projects')}
               className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
             >
-              PROYECTOS
+              {t(ui.nav.projects)}
             </button>
             <button
               onClick={() => scrollToSection('skills')}
               className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
             >
-              HABILIDADES
+              {t(ui.nav.skills)}
             </button>
             <button
               onClick={() => scrollToSection('education')}
               className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
             >
-              EDUCACIÓN
+              {t(ui.nav.education)}
             </button>
             <button
               onClick={() => scrollToSection('experiences')}
               className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
             >
-              EXPERIENCIA
+              {t(ui.nav.experience)}
             </button>
             <button
               onClick={() => scrollToSection('contact')}
               className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
             >
-              CONTACTO
+              {t(ui.nav.contact)}
             </button>
             <a
               href={cvPdf}
               download
               className="w-full text-left block text-sm font-mono text-gray-700 dark:text-gray-300 hover:text-black dark:hover:text-white transition-colors py-2"
             >
-              CV
+              {t(ui.nav.cv)}
             </a>
           </div>
         </div>

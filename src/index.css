@@ -341,13 +341,180 @@
     50% { opacity: 0.18; transform: scale(1.05); }
   }
 
+  /* ═══════════════════════════════════════════
+     EFECTOS 3D / TEMÁTICA DE CÓDIGO
+     ═══════════════════════════════════════════ */
+
+  /* ── Perspetiva global para tarjetas 3D ── */
+  .perspective-3d {
+    perspective: 1200px;
+  }
+
+  .tilt-3d {
+    transform-style: preserve-3d;
+    transition: transform 0.18s ease-out, box-shadow 0.4s ease;
+    will-change: transform;
+  }
+
+  .tilt-3d-inner {
+    transform: translateZ(40px);
+    transform-style: preserve-3d;
+  }
+
+  /* ── Grid de fondo estilo "Matrix" ── */
+  .code-grid {
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(59, 130, 246, 0.08) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(59, 130, 246, 0.08) 1px, transparent 1px);
+    background-size: 48px 48px;
+    transform: perspective(600px) rotateX(55deg) scale(2.2);
+    transform-origin: center top;
+    pointer-events: none;
+    mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 85%);
+    -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,0.9), transparent 85%);
+  }
+
+  .code-grid-animate {
+    animation: gridScroll 14s linear infinite;
+  }
+
+  @keyframes gridScroll {
+    from { background-position: 0 0; }
+    to { background-position: 0 48px; }
+  }
+
+  /* ── Cubo 3D giratorio ── */
+  .cube {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: cubeSpin 22s linear infinite;
+  }
+
+  .cube-face {
+    position: absolute;
+    inset: 0;
+    border: 1px solid currentColor;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Space Mono', monospace;
+  }
+
+  @keyframes cubeSpin {
+    from { transform: rotateX(0deg) rotateY(0deg); }
+    to { transform: rotateX(360deg) rotateY(360deg); }
+  }
+
+  /* ── Anillo orbital 3D ── */
+  .orbit-ring {
+    position: absolute;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 50%;
+    transform-style: preserve-3d;
+    animation: orbitSpin 26s linear infinite;
+  }
+
+  .dark .orbit-ring {
+    border-color: rgba(255, 255, 255, 0.12);
+  }
+
+  @keyframes orbitSpin {
+    from { transform: rotateX(70deg) rotateZ(0deg); }
+    to { transform: rotateX(70deg) rotateZ(360deg); }
+  }
+
+  .orbit-dot {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    border-radius: 50%;
+    background: #3b82f6;
+    box-shadow: 0 0 12px rgba(59, 130, 246, 0.8);
+  }
+
+  /* ── Fragmentos de código flotantes ── */
+  .code-fragment {
+    position: absolute;
+    font-family: 'Space Mono', monospace;
+    white-space: nowrap;
+    animation: codeFloat 18s ease-in-out infinite;
+    will-change: transform, opacity;
+    text-shadow: 0 0 20px rgba(59, 130, 246, 0.35);
+  }
+
+  @keyframes codeFloat {
+    0%, 100% { transform: translateZ(-40px) translateY(0) rotate(0deg); opacity: 0.12; }
+    50% { transform: translateZ(60px) translateY(-30px) rotate(4deg); opacity: 0.3; }
+  }
+
+  /* ── Tarjeta con borde 3D luminoso ── */
+  .card-3d {
+    position: relative;
+  }
+
+  .card-3d::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: linear-gradient(135deg, rgba(59,130,246,0.5), transparent 40%, transparent 60%, rgba(59,130,246,0.4));
+    padding: 1px;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+  }
+
+  /* ── Brillo especular que sigue el cursor ── */
+  .glare {
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(255,255,255,0.25), transparent 45%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .tilt-3d:hover .glare {
+    opacity: 1;
+  }
+
+  .dark .glare {
+    background: radial-gradient(circle at var(--gx, 50%) var(--gy, 50%), rgba(147,197,253,0.18), transparent 45%);
+  }
+
+  /* ── Scanline sutil tipo CRT ── */
+  .scanlines::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(
+      to bottom,
+      transparent 0,
+      transparent 2px,
+      rgba(0, 0, 0, 0.02) 2px,
+      rgba(0, 0, 0, 0.02) 4px
+    );
+  }
+
   /* ── Accessibility ── */
   @media (prefers-reduced-motion: reduce) {
     .animate-float,
     .animate-drift,
     .animate-enter,
     .geo-shape,
-    .gradient-blob {
+    .gradient-blob,
+    .code-grid-animate,
+    .cube,
+    .orbit-ring,
+    .code-fragment {
       animation: none;
     }
     .reveal {

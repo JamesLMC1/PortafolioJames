@@ -1,7 +1,11 @@
 import { experiences } from '../data/experience';
+import { useLanguage } from '../contexts/LanguageContext';
+import { ui } from '../data/translations';
 import Reveal from './Reveal';
 
 export default function Experiences() {
+	const { t } = useLanguage();
+
 	return (
 		<section className="min-h-screen py-20 px-6 md:px-12 lg:px-24 bg-white dark:bg-gray-900 transition-colors duration-300 relative overflow-hidden">
 			{/* Fondos artísticos */}
@@ -18,10 +22,10 @@ export default function Experiences() {
 				<Reveal>
 					<div className="mb-16">
 						<h2 className="text-3xl md:text-5xl font-mono font-bold text-black dark:text-white mb-4">
-							Experiencias laborales
+							{t(ui.experiences.title)}
 						</h2>
 						<p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-400">
-							Historial laboral y roles
+							{t(ui.experiences.subtitle)}
 						</p>
 					</div>
 				</Reveal>
@@ -40,14 +44,14 @@ export default function Experiences() {
 										<h3 className="text-xl md:text-2xl font-mono font-bold text-black dark:text-white">
 											{exp.company}
 										</h3>
-										<div className="text-sm font-mono text-gray-600 dark:text-gray-300">{exp.role}</div>
+										<div className="text-sm font-mono text-gray-600 dark:text-gray-300">{t(exp.role)}</div>
 									</div>
 
-									<div className="text-xs md:text-sm font-mono text-gray-500 dark:text-gray-400">{exp.duration}</div>
+									<div className="text-xs md:text-sm font-mono text-gray-500 dark:text-gray-400">{t(exp.duration)}</div>
 								</div>
 
 								<p className="text-sm md:text-base font-mono text-gray-600 dark:text-gray-300 leading-relaxed whitespace-pre-line">
-									{exp.description}
+									{t(exp.description)}
 								</p>
 							</div>
 						</Reveal>

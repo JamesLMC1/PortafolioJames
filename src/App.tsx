@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { ThemeProvider } from './contexts/ThemeContext';
+import { LanguageProvider } from './contexts/LanguageContext';
 import LoadingAnimation from './components/LoadingAnimation';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
@@ -22,7 +23,8 @@ function App() {
 
   return (
     <ThemeProvider>
-      {isLoading && <LoadingAnimation onComplete={handleLoadingComplete} />}
+      <LanguageProvider>
+        {isLoading && <LoadingAnimation onComplete={handleLoadingComplete} />}
 
       <div className={`min-h-screen bg-white dark:bg-gray-900 transition-all duration-500 relative ${
         showContent ? 'opacity-100' : 'opacity-0'
@@ -50,6 +52,7 @@ function App() {
 
       {/* Overlay de textura grain/noise global — sutil, solo lectura */}
       <div className="noise-overlay" aria-hidden="true" />
+      </LanguageProvider>
     </ThemeProvider>
   );
 }
